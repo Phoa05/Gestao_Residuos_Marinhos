@@ -27,11 +27,13 @@ public class AnaliseDados {
         Map<String, Integer> agrupamentoPorTipo = agruparPontosPorTipo();
         double mediaResiduos = calcularMediaResiduos();
 
+        System.out.println("---------------------------------------------------------------------------");
         System.out.println("Relatório de Análise de Dados de Resíduos Marinhos:");
         System.out.println("Agrupamento por Tipo de Resíduos:");
         for (Map.Entry<String, Integer> entry : agrupamentoPorTipo.entrySet()) {
             System.out.println(entry.getKey() + ": " + entry.getValue() + " pontos de coleta");
         }
         System.out.println("Quantidade média de resíduos por ponto de coleta: " + mediaResiduos + " kg");
+        System.out.println("----------------------------------------------------------------------------");
     }
 }

@@ -67,6 +67,22 @@ public class PontoColeta {
         }
     }
 
+    public void compactarPlasticos() {
+        if (this instanceof PontoColetaPlastico) {
+            ((PontoColetaPlastico) this).compactarPlasticos();
+        } else {
+            System.out.println("Este ponto de coleta não compacta plásticos.");
+        }
+    }
+
+    public void separarMetaisFerroso() {
+        if (this instanceof PontoColetaMetal) {
+            ((PontoColetaMetal) this).separarMetaisFerroso();
+        } else {
+            System.out.println("Este ponto de coleta não separa metais ferrosos.");
+        }
+    }
+
     @Override
     public String toString() {
         return "Localização: " + localizacao + ", Tipo de Resíduos: " + tipoResiduos + ", Quantidade: " + quantidadeResiduos + " kg, Data/Hora: " + dataHora;

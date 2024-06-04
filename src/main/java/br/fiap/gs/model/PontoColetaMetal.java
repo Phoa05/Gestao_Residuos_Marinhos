@@ -5,6 +5,10 @@ public class PontoColetaMetal extends PontoColeta {
         super(localizacao, "Metal", quantidadeResiduos);
     }
 
+    public void separarMetalFerroso() {
+        System.out.println("Separando metal ferroso...");
+    }
+
     @Override
     public String toString() {
         return "Ponto de Coleta de Metal - " + super.toString();
