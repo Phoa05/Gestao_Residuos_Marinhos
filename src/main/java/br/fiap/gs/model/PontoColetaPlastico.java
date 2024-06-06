@@ -14,4 +14,3 @@ public class PontoColetaPlastico extends PontoColeta {
         return "Ponto de Coleta de Plástico - " + super.toString();
     }
 }
-

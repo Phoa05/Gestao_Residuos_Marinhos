@@ -20,6 +20,11 @@ public class PontoColeta {
         this.dataHora = LocalDateTime.now();
     }
 
+    // Método com sobrecarga
+    public PontoColeta(String localizacao, double quantidadeResiduos) {
+        this(localizacao, "Desconhecido", quantidadeResiduos);
+    }
+
     public String getLocalizacao() {
         return localizacao;
     }
@@ -36,6 +41,10 @@ public class PontoColeta {
         return dataHora;
     }
 
+    /**
+     * Adiciona um novo ponto de coleta ao array de pontos de coleta.
+     * @param ponto O ponto de coleta a ser adicionado.
+     */
     public static void adicionarPontoColeta(PontoColeta ponto) {
         if (count < MAX_PONTOS) {
             pontosColeta[count++] = ponto;
@@ -44,10 +53,18 @@ public class PontoColeta {
         }
     }
 
+    /**
+     * Lista todos os pontos de coleta cadastrados.
+     * @return Um array de pontos de coleta.
+     */
     public static PontoColeta[] listarPontosColeta() {
         return Arrays.copyOf(pontosColeta, count);
     }
 
+    /**
+     * Calcula a quantidade total de resíduos coletados.
+     * @return A quantidade total de resíduos em quilogramas.
+     */
     public static double calcularTotalResiduos() {
         double total = 0;
         for (int i = 0; i < count; i++) {
@@ -56,6 +73,9 @@ public class PontoColeta {
         return total;
     }
 
+    /**
+     * Gera um relatório de gestão de resíduos.
+     */
     public static void gerarRelatorio() {
         PontoColeta[] pontos = listarPontosColeta();
         double totalResiduos = calcularTotalResiduos();

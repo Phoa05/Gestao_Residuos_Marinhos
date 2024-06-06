@@ -2,6 +2,7 @@ package br.fiap.gs;
 
 import br.fiap.gs.model.PontoColeta;
 import br.fiap.gs.model.PontoColetaMetal;
+import br.fiap.gs.model.PontoColetaPlastico;
 import br.fiap.gs.service.AnaliseDados;
 
 import java.util.Scanner;
@@ -32,9 +33,9 @@ public class Main {
                     scanner.nextLine();
 
                     if (tipo == 1) {
-                        PontoColeta.adicionarPontoColeta(new PontoColeta(localizacao, "Plástico", quantidade));
+                        PontoColeta.adicionarPontoColeta(new PontoColetaPlastico(localizacao, quantidade));
                     } else if (tipo == 2) {
-                        PontoColeta.adicionarPontoColeta(new PontoColeta(localizacao, "Metal", quantidade));
+                        PontoColeta.adicionarPontoColeta(new PontoColetaMetal(localizacao, quantidade));
                     } else {
                         System.out.print("Digite o tipo de resíduos: ");
                         String tipoResiduos = scanner.nextLine();
